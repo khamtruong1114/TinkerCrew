@@ -3,7 +3,7 @@ import Logo from "../assets/TinkerCrew.svg";
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 
-const HeaderStyled = styled.div`
+const HeaderStyled = styled.div<{ $show: boolean }>`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -11,19 +11,24 @@ const HeaderStyled = styled.div`
   padding: 20px;
   height: 110px;
   position: fixed;
-  top: 0;
+  top: ${(props) => (props.$show ? "0" : "-200px")};
   left: 0;
   right: 0;
   z-index: 100;
+  transition: top 0.4s ease-in-out;
 `;
 
 const LogoStyled = styled.img`
-  margin-left: 20px 20px;
+  margin-left: 20px;
 `;
 
-export default function Header() {
+interface HeaderProps {
+  show: boolean;
+}
+
+export default function Header({ show }: HeaderProps) {
   return (
-    <HeaderStyled>
+    <HeaderStyled $show={show}>
       <NavLink to="/homepage">
         <LogoStyled src={Logo} alt="tinkercrew" />
       </NavLink>

@@ -14,7 +14,6 @@ const GlobalStyle = createGlobalStyle`
     background-color: #fdfdfd;
     color: #333;
     line-height: 1.6;
-    height: 100vh;
     width: 100vw;
   }
 

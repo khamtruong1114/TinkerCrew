@@ -3,7 +3,7 @@ import "./App.css";
 import Homepage from "./pages/Homepage";
 import Services from "./pages/Services";
 import About from "./pages/About";
-import AppLayout from "./layout/AppLayout";
+import AppLayout from "./pages/AppLayout.tsx";
 import GlobalStyle from "./styles/GlobalStyle.tsx";
 
 function App() {
