@@ -2,6 +2,8 @@ import PageNav from "./PageNav";
 import Logo from "../assets/TinkerCrew.svg";
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
+import MenuBar from "../ui/MenuBar";
+import { useState } from "react";
 
 const HeaderStyled = styled.div<{ $show: boolean }>`
   display: flex;
@@ -9,7 +11,9 @@ const HeaderStyled = styled.div<{ $show: boolean }>`
   align-items: center;
   background: linear-gradient(to bottom, #53535a, #c4c2cb);
   padding: 20px;
-  height: 110px;
+  height: 64px;
+  padding: 20px;
+  width: 100%;
   position: fixed;
   top: ${(props) => (props.$show ? "0" : "-200px")};
   left: 0;
@@ -22,17 +26,41 @@ const LogoStyled = styled.img`
   margin-left: 20px;
 `;
 
+const MenuBarStyle = styled.div`
+  display: none;
+
+  @media (max-width: 1024px) {
+    display: block;
+  }
+`;
+
 interface HeaderProps {
   show: boolean;
 }
 
 export default function Header({ show }: HeaderProps) {
+  const [menuToggle, setMenuToggle] = useState<boolean>(false);
+
   return (
     <HeaderStyled $show={show}>
       <NavLink to="/homepage">
         <LogoStyled src={Logo} alt="tinkercrew" />
       </NavLink>
-      <PageNav />
+
+      <MenuBarStyle
+        onClick={() => {
+          setMenuToggle((open) => !open);
+        }}
+      >
+        <MenuBar open={menuToggle} />
+      </MenuBarStyle>
+
+      <PageNav
+        open={menuToggle}
+        onClick={() => {
+          setMenuToggle((open) => !open);
+        }}
+      />
     </HeaderStyled>
   );
 }

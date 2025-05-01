@@ -26,6 +26,10 @@ const GlobalStyle = createGlobalStyle`
     list-style: none;
   }
 
+  @media (max-width: 600px) {
+  html {
+    font-size: 14px;
+  }}
 `;
 
 export default GlobalStyle;
