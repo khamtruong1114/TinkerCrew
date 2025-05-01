@@ -8,8 +8,9 @@ const NavWrapper = styled.div<{ $open: boolean }>`
   justify-content: space-between;
   gap: 50px;
   margin-right: 50px;
-
+  //smaller screen
   @media (max-width: 1024px) {
+    //open menubar
     display: ${(props) => (props.$open ? "flex" : "none")};
     height: 100vh;
     width: 50%;
@@ -84,8 +85,8 @@ const PageItems = styled(NavLink)`
 `;
 
 type PageNavProps = {
-  onClick: () => void;
-  open: boolean;
+  onClick: () => void; //click to choose and then close menubar
+  open: boolean; // open/close menubar
 };
 
 export default function PageNav({ onClick, open }: PageNavProps) {

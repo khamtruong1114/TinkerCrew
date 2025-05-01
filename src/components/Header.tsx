@@ -35,7 +35,7 @@ const MenuBarStyle = styled.div`
 `;
 
 interface HeaderProps {
-  show: boolean;
+  show: boolean; //scroll to show header
 }
 
 export default function Header({ show }: HeaderProps) {
