@@ -1,11 +1,12 @@
 import styled from "styled-components";
 
-const MenuBarStyle = styled.div`
+const MenuBarStyle = styled.div<{ $show: boolean }>`
   position: fixed;
   top: 1rem;
   right: 2rem;
   z-index: 10;
-  display: inline;
+  display: ${(props) => (props.$show ? "inline" : "none")};
+
   cursor: pointer;
 
   @media (max-width: 600px) {
@@ -43,11 +44,16 @@ const Bar3 = styled.div<{ $open: boolean }>`
 
 interface MenuBarProps {
   open: boolean;
+  show: boolean;
 }
 
-function MenuBar({ open }: MenuBarProps) {
+function MenuBar({ open, show }: MenuBarProps) {
   return (
-    <MenuBarStyle>
+    <MenuBarStyle
+      $show={show}
+      data-aos={`${show ? "zoom-in" : "none"}`}
+      data-aos-duration={400}
+    >
       <Bar1 $open={open}></Bar1>
       <Bar2 $open={open}></Bar2>
       <Bar3 $open={open}></Bar3>

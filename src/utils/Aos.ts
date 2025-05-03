@@ -5,6 +5,7 @@ const initAOS = () => {
   AOS.init({
     duration: 1000, // Thời gian animation
     easing: "ease-in-out", // Loại easing
+    delay: 0,
   });
 };
 

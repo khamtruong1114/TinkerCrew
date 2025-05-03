@@ -3,7 +3,6 @@ import Logo from "../assets/TinkerCrew.svg";
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 import MenuBar from "../ui/MenuBar";
-import { useState } from "react";
 
 const HeaderStyled = styled.div<{ $show: boolean }>`
   display: flex;
@@ -39,11 +38,15 @@ const MenuBarStyle = styled.div`
 
 interface HeaderProps {
   show: boolean; //scroll to show header
+  menuToggle: boolean;
+  setMenuToggle: (open: boolean) => void;
 }
 
-export default function Header({ show }: HeaderProps) {
-  const [menuToggle, setMenuToggle] = useState<boolean>(false);
-
+export default function Header({
+  show,
+  menuToggle,
+  setMenuToggle,
+}: HeaderProps) {
   return (
     <HeaderStyled $show={show}>
       <NavLink to="/homepage">
@@ -52,16 +55,17 @@ export default function Header({ show }: HeaderProps) {
 
       <MenuBarStyle
         onClick={() => {
-          setMenuToggle((open) => !open);
+          setMenuToggle(!menuToggle);
         }}
       >
-        <MenuBar open={menuToggle} />
+        <MenuBar open={menuToggle} show={show} />
       </MenuBarStyle>
 
       <PageNav
         open={menuToggle}
+        show={show}
         onClick={() => {
-          setMenuToggle((open) => !open);
+          setMenuToggle(!menuToggle);
         }}
       />
     </HeaderStyled>

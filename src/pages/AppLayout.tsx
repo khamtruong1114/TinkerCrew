@@ -7,6 +7,7 @@ import initAOS from "../utils/Aos.ts";
 export default function AppLayout() {
   const [showHeader, setShowHeader] = useState<boolean>(true);
   const [lastScrollY, setLastCrollY] = useState(0);
+  const [menuToggle, setMenuToggle] = useState<boolean>(false);
 
   useEffect(() => {
     initAOS();
@@ -21,6 +22,7 @@ export default function AppLayout() {
         setShowHeader(true);
       }
       setLastCrollY(window.scrollY);
+      setMenuToggle(false);
     }
     window.addEventListener("scroll", handleScrollY);
     return () => {
@@ -30,7 +32,11 @@ export default function AppLayout() {
 
   return (
     <>
-      <Header show={showHeader} />
+      <Header
+        show={showHeader}
+        menuToggle={menuToggle}
+        setMenuToggle={setMenuToggle}
+      />
       <main>
         <Outlet />
       </main>

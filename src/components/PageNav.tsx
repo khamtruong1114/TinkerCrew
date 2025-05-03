@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
-const NavWrapper = styled.div<{ $open: boolean }>`
+const NavWrapper = styled.div<{ $open: boolean; $show: boolean }>`
   display: flex;
   width: 700px;
   height: 47px;
@@ -11,10 +11,11 @@ const NavWrapper = styled.div<{ $open: boolean }>`
   //smaller screen
   @media (max-width: 1024px) {
     //open menubar
-    display: ${(props) => (props.$open ? "flex" : "none")};
+    display: ${(props) => (!props.$open || !props.$show ? "none" : "flex")};
+
     height: 100vh;
     width: 50%;
-    margin-right: 2rem;
+    margin-right: 0;
     flex-direction: column;
     justify-content: flex-start;
     padding-top: 3rem;
@@ -23,6 +24,7 @@ const NavWrapper = styled.div<{ $open: boolean }>`
     position: absolute;
     top: 0;
     right: 0;
+    bottom: 0;
     background: rgba(0, 0, 0, 0.7);
     opacity: 10;
     border-radius: 20px;
@@ -87,11 +89,12 @@ const PageItems = styled(NavLink)`
 type PageNavProps = {
   onClick: () => void; //click to choose and then close menubar
   open: boolean; // open/close menubar
+  show: boolean;
 };
 
-export default function PageNav({ onClick, open }: PageNavProps) {
+export default function PageNav({ onClick, open, show }: PageNavProps) {
   return (
-    <NavWrapper $open={open}>
+    <NavWrapper $open={open} $show={show}>
       <PageItems
         to="/homepage"
         className={({ isActive }) => (isActive ? "active" : "")}
