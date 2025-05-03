@@ -1,21 +1,24 @@
 import { Box, Container, Typography } from "@mui/material";
 import styled from "styled-components";
 import IntroCard from "./IntroCard";
-import Welcome from "../../assets/Welcome.png";
+import StoryImage from "../../assets/StoryImage.png";
+import Card1 from "../../assets/Card1.png";
+import Card2 from "../../assets/Card2.png";
+import Card3 from "../../assets/Card3.png";
 
 const cards = [
   {
-    icon: `${Welcome}`,
+    icon: `${Card1}`,
     title: "Who we are?",
     description: "Write somthing here",
   },
   {
-    icon: `${Welcome}`,
+    icon: `${Card2}`,
     title: "Why do we exist?",
     description: "Write somthing here",
   },
   {
-    icon: `${Welcome}`,
+    icon: `${Card3}`,
     title: "Whom do we serve?",
     description: "Write somthing here",
   },
@@ -40,9 +43,9 @@ const Wrapper = styled(Container)`
   }
 `;
 
-const StoryBox = styled(Box)`
-  margin-left: 30px;
-  margin-bottom: 10px;
+const HeaderBox = styled(Box)`
+  margin-left: 1rem;
+  margin-bottom: 1.25rem;
 `;
 
 const ContentWrapper = styled(Box)`
@@ -50,8 +53,6 @@ const ContentWrapper = styled(Box)`
   gap: 2rem;
   align-items: center;
   justify-content: center;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
   height: 50%;
   width: 100%;
   @media (max-width: 900px) {
@@ -63,16 +64,20 @@ const ContentWrapper = styled(Box)`
 
 const Image = styled.img`
   border-radius: 40px;
-  height: 100%;
-  width: 100%;
+  height: 80%;
+  width: 70%;
   object-fit: cover;
+  @media (max-width: 600px) {
+    height: 100%;
+    width: 100%;
+  }
 `;
 
 export default function StorySection() {
   return (
     <StoryWrapper id="story">
       <Wrapper>
-        <StoryBox>
+        <HeaderBox>
           <Typography
             variant="h1"
             sx={{
@@ -87,10 +92,10 @@ export default function StorySection() {
           >
             Our Story
           </Typography>
-        </StoryBox>
+        </HeaderBox>
         {/* Story and image */}
         <ContentWrapper>
-          <Image src={Welcome} alt="Our story" />
+          <Image src={StoryImage} alt="Our story" />
           <Typography variant="h5" sx={{ textAlign: "left" }} gutterBottom>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. A nam
             veniam iure ipsam debitis velit obcaecati excepturi iusto, molestiae

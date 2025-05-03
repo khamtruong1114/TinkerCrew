@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Welcome from "../assets/Welcome.png";
+import Mission from "../assets/Mission.png";
 import { Box, Typography } from "@mui/material";
 import ScrollDownButton from "../ui/ScrollDown";
 
@@ -55,7 +56,7 @@ export default function About() {
       <MissionSection>
         <CoverSection
           description="Mission & Vision"
-          image={`${Welcome}`}
+          image={`${Mission}`}
           id="mission"
         >
           <MissionContentWrapper>

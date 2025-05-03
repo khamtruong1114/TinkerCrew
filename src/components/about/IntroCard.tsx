@@ -8,7 +8,7 @@ type IntroCardProps = {
 };
 
 const StyledCard = styled(Box)<{ $icon: string }>`
-  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)),
     url(${(props) => props.$icon});
   background-position: center;
   background-size: cover;
@@ -20,11 +20,16 @@ const StyledCard = styled(Box)<{ $icon: string }>`
   text-align: center;
 
   transition: all 0.3s ease;
+
+  @media (max-width: 600px) {
+    height: 15%;
+    width: 70%;
+  }
 `;
 
 const StyledTitle = styled(Typography)`
-  color: #8a76e1;
-  font-weight: 300px;
+  color: #a292e9;
+  font-weight: 200px;
 `;
 
 const StyledDescription = styled(Typography)`
@@ -43,7 +48,7 @@ export default function IntroCard({
       <StyledTitle
         sx={{
           fontSize: {
-            xs: "32px",
+            xs: "24px",
             sm: "32px",
             md: "48px",
           },
@@ -54,9 +59,9 @@ export default function IntroCard({
       <StyledDescription
         sx={{
           fontSize: {
-            xs: "0.5rem",
-            sm: "0.8rem",
-            md: "1.2rem",
+            xs: "14px",
+            sm: "20px",
+            md: "24px",
           },
         }}
       >

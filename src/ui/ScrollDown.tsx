@@ -29,6 +29,10 @@ const BounceButton = styled(IconButton)`
     outline: none;
     border: none;
   }
+
+  @media (max-width: 600px) {
+    left: 45%;
+  }
 `;
 
 export default function ScrollDownButton() {
