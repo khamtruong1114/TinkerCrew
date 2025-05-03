@@ -15,6 +15,10 @@ const GlobalStyle = createGlobalStyle`
     color: #333;
     line-height: 1.6;
     width: 100vw;
+    @media screen and (max-width: 800px){line-height: 1.4rem;
+    font-size: 0.9rem;
+    text-align: justify;}
+    
   }
 
   a {

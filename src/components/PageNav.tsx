@@ -6,19 +6,19 @@ const NavWrapper = styled.div<{ $open: boolean }>`
   width: 700px;
   height: 47px;
   justify-content: space-between;
-  gap: 50px;
-  margin-right: 50px;
+  gap: 3rem;
+  margin-right: 3rem;
   //smaller screen
   @media (max-width: 1024px) {
     //open menubar
     display: ${(props) => (props.$open ? "flex" : "none")};
     height: 100vh;
     width: 50%;
-    margin-right: 30px;
+    margin-right: 2rem;
     flex-direction: column;
     justify-content: flex-start;
-    padding-top: 50px;
-    gap: 50px;
+    padding-top: 3rem;
+    gap: 3rem;
     align-items: center;
     position: absolute;
     top: 0;
@@ -43,7 +43,7 @@ const PageItems = styled(NavLink)`
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  margin-top: -20px;
+  margin-top: -1.25rem;
 
   border: none;
   border-radius: 5px;
@@ -51,7 +51,7 @@ const PageItems = styled(NavLink)`
   height: 80px;
 
   font-weight: bold;
-  font-size: 30px;
+  font-size: 2rem;
   color: whitesmoke;
   text-decoration: none;
 

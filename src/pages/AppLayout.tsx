@@ -2,10 +2,15 @@ import { Outlet } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { useEffect, useState } from "react";
+import initAOS from "../utils/Aos.ts";
 
 export default function AppLayout() {
   const [showHeader, setShowHeader] = useState<boolean>(true);
   const [lastScrollY, setLastCrollY] = useState(0);
+
+  useEffect(() => {
+    initAOS();
+  }, []);
 
   useEffect(() => {
     function handleScrollY() {

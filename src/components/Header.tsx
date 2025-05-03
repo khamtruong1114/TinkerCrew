@@ -9,10 +9,13 @@ const HeaderStyled = styled.div<{ $show: boolean }>`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: linear-gradient(to bottom, #53535a, #c4c2cb);
-  padding: 20px;
-  height: 64px;
-  padding: 20px;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.3),
+    rgba(0, 0, 0, 0.7)
+  );
+  padding: 1.25rem;
+  height: 4rem;
   width: 100%;
   position: fixed;
   top: ${(props) => (props.$show ? "0" : "-200px")};
@@ -23,7 +26,7 @@ const HeaderStyled = styled.div<{ $show: boolean }>`
 `;
 
 const LogoStyled = styled.img`
-  margin-left: 20px;
+  margin-left: 1.25rem;
 `;
 
 const MenuBarStyle = styled.div`

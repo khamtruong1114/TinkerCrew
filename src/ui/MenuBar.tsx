@@ -35,7 +35,7 @@ const Bar3 = styled.div<{ $open: boolean }>`
   width: 2.5rem;
   height: 0.32rem;
   background-color: #fff;
-  margin: 8px 0;
+  margin: 0.5rem 0;
   transition: 0.4s;
   transform: ${(props) =>
     props.$open ? "rotate(45deg) translate(-10px, -8px)" : "none"};
