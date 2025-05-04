@@ -41,7 +41,7 @@ const NavWrapper = styled.div<{ $open: boolean; $show: boolean }>`
   }
 `;
 
-const PageItems = styled(NavLink)`
+export const PageItems = styled(NavLink)`
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -62,20 +62,21 @@ const PageItems = styled(NavLink)`
   transition: border-radius 0.3s ease, background-color 0.5s ease;
 
   &:hover {
-    background-color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(255, 255, 255, 0.519);
     border-radius: 20px;
     color: white;
   }
 
   &.active {
-    background-color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(255, 255, 255, 0.339);
     border-radius: 20px;
   }
 
-  @media (max-width: 1024px) {
+  @media (max-width: 600px) {
     &:hover {
-      background-color: rgba(255, 255, 255, 0.6);
+      background-color: rgba(255, 255, 255, 0.782);
       color: #4869ab;
+      font-size: 1rem;
     }
 
     &.active {
@@ -110,11 +111,11 @@ export default function PageNav({ onClick, open, show }: PageNavProps) {
         About Us
       </PageItems>
       <PageItems
-        to="/services"
+        to="/contact"
         onClick={onClick}
         className={({ isActive }) => (isActive ? "active" : "")}
       >
-        Services
+        Contact Us
       </PageItems>
     </NavWrapper>
   );

@@ -21,7 +21,7 @@ const HeaderStyled = styled.div<{ $show: boolean }>`
   left: 0;
   right: 0;
   z-index: 100;
-  transition: top 0.4s ease-in-out;
+  transition: top 0.1s ease-in-out;
 `;
 
 const LogoStyled = styled.img`

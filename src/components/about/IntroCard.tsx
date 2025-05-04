@@ -14,15 +14,13 @@ const StyledCard = styled(Box)<{ $icon: string }>`
   background-size: cover;
   box-shadow: 0 10px 30px 2px rgba(0, 0, 0, 0.4);
   border-radius: 20px;
-  padding: 2rem;
   width: 100%;
-  height: 70%;
+  height: 100%;
   text-align: center;
-
   transition: all 0.3s ease;
 
   @media (max-width: 600px) {
-    height: 15%;
+    height: 40%;
     width: 70%;
   }
 `;

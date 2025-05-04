@@ -31,7 +31,7 @@ const StoryWrapper = styled.div`
 `;
 
 const Wrapper = styled(Container)`
-  padding: 6rem 0;
+  padding: 2rem 0;
   position: absolute;
   left: 6rem;
   min-width: 90%;
@@ -45,30 +45,35 @@ const Wrapper = styled(Container)`
 
 const HeaderBox = styled(Box)`
   margin-left: 1rem;
-  margin-bottom: 1.25rem;
+  height: 10%;
+
+  @media (max-width: 900px) {
+    height: 5%;
+  }
 `;
 
 const ContentWrapper = styled(Box)`
   display: flex;
   gap: 2rem;
   align-items: center;
-  justify-content: center;
-  height: 50%;
+  justify-content: space-evenly;
+  margin-top: 2rem;
+  height: 40%;
   width: 100%;
   @media (max-width: 900px) {
     flex-direction: column;
     text-align: center;
-    margin: auto;
+    margin-top: 1rem;
   }
 `;
 
 const Image = styled.img`
   border-radius: 40px;
-  height: 80%;
+  height: 100%;
   width: 70%;
   object-fit: cover;
   @media (max-width: 600px) {
-    height: 100%;
+    height: 50%;
     width: 100%;
   }
 `;
@@ -104,7 +109,7 @@ export default function StorySection() {
           </Typography>
         </ContentWrapper>
         {/* Cards */}
-        <ContentWrapper>
+        <ContentWrapper sx={{ height: "45%" }}>
           {cards.map((card, index) => (
             <IntroCard
               icon={`${card.icon}`}

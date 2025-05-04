@@ -3,6 +3,20 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { useEffect, useState } from "react";
 import initAOS from "../utils/Aos.ts";
+import styled from "styled-components";
+
+const Wrapper = styled.div`
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow-x: hidden;
+`;
+
+const Main = styled.main`
+  width: 100%;
+  flex: 1;
+`;
 
 export default function AppLayout() {
   const [showHeader, setShowHeader] = useState<boolean>(true);
@@ -31,16 +45,16 @@ export default function AppLayout() {
   }, [lastScrollY]);
 
   return (
-    <>
+    <Wrapper>
       <Header
         show={showHeader}
         menuToggle={menuToggle}
         setMenuToggle={setMenuToggle}
       />
-      <main>
+      <Main>
         <Outlet />
-      </main>
+      </Main>
       <Footer />
-    </>
+    </Wrapper>
   );
 }
