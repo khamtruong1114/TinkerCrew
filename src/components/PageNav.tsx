@@ -79,11 +79,9 @@ export const PageItems = styled(NavLink)`
       font-size: 1rem;
     }
 
-    &.active {
-      background-color: rgba(255, 255, 255, 0.6);
-    }
-    width: 60%;
-    height: 80px;
+    width: 50%;
+    height: 60px;
+    font-size: 1rem;
   }
 `;
 

@@ -23,6 +23,13 @@ const Bar1 = styled.div<{ $open: boolean }>`
   transition: 0.4s;
   transform: ${(props) =>
     props.$open ? "rotate(-45deg) translate(-10px, 8px)" : "none"};
+
+  @media (max-width: 600px) {
+    width: 1.7rem;
+    height: 0.25rem;
+    transform: ${(props) =>
+      props.$open ? "rotate(-45deg) translate(-6px, 5px)" : "none"};
+  }
 `;
 const Bar2 = styled.div<{ $open: boolean }>`
   width: 2.5rem;
@@ -31,6 +38,10 @@ const Bar2 = styled.div<{ $open: boolean }>`
   margin: 8px 0;
   transition: 0.4s;
   opacity: ${(props) => (props.$open ? "0" : "none")};
+  @media (max-width: 600px) {
+    width: 1.7rem;
+    height: 0.25rem;
+  }
 `;
 const Bar3 = styled.div<{ $open: boolean }>`
   width: 2.5rem;
@@ -40,6 +51,12 @@ const Bar3 = styled.div<{ $open: boolean }>`
   transition: 0.4s;
   transform: ${(props) =>
     props.$open ? "rotate(45deg) translate(-10px, -8px)" : "none"};
+  @media (max-width: 600px) {
+    width: 1.7rem;
+    height: 0.25rem;
+    transform: ${(props) =>
+      props.$open ? "rotate(45deg) translate(-11px, -10px)" : "none"};
+  }
 `;
 
 interface MenuBarProps {
