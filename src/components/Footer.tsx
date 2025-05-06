@@ -2,7 +2,7 @@ import { Box, Icon, Typography } from "@mui/material";
 import EmailIcon from "@mui/icons-material/Email";
 import PhoneIcon from "@mui/icons-material/Phone";
 import styled from "styled-components";
-import Logo from "./Logo";
+import Logo from "../ui/Logo";
 import { PageItems } from "./PageNav";
 import { NavLink } from "react-router-dom";
 

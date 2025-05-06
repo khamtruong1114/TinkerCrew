@@ -50,7 +50,7 @@ export default function Header({
   return (
     <HeaderStyled $show={show}>
       <NavLink to="/homepage">
-        <LogoStyled src={Logo} alt="tinkercrew" />
+        <LogoStyled src={`${Logo}`} alt="tinkercrew" />
       </NavLink>
 
       <MenuBarStyle

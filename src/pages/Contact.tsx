@@ -32,7 +32,6 @@ export default function Contact() {
             fontWeight: "400",
             fontSize: {
               xs: "24px",
-
               md: "32px",
             },
           }}
