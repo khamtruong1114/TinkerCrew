@@ -26,6 +26,10 @@ const HeaderStyled = styled.div<{ $show: boolean }>`
 
 const LogoStyled = styled.img`
   margin-left: 1.25rem;
+
+  @media (max-width: 900px) {
+    height: 3.5rem;
+  }
 `;
 
 const MenuBarStyle = styled.div`

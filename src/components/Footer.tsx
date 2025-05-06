@@ -49,6 +49,13 @@ const Items = styled(Box)`
   margin-top: 1rem;
 `;
 
+const StyledPageItems = styled(PageItems)`
+  @media (max-width: 900px) {
+    font-size: 24px;
+    height: 100%;
+  }
+`;
+
 export default function Footer() {
   return (
     <Wrapper>
@@ -171,15 +178,7 @@ export default function Footer() {
         </StyledContainer>
         {/* button lets talk */}
         <StyledContainer>
-          <PageItems
-            to="/contact"
-            style={{
-              color: "#043858",
-              fontSize: "48px",
-            }}
-          >
-            Let's talk
-          </PageItems>
+          <StyledPageItems to="/contact">Let's talk</StyledPageItems>
         </StyledContainer>
       </ContentWrapper>
     </Wrapper>

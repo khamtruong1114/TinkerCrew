@@ -34,31 +34,86 @@ const cards: CardType[] = [
     image: DesignImage,
     title: "UI/UX Design",
     description: "Develop a modern planning",
-    icon: <GridViewIcon color="primary" sx={{ fontSize: 40 }} />,
+    icon: (
+      <GridViewIcon
+        color="primary"
+        sx={{
+          fontSize: {
+            xs: 24,
+            sm: 32,
+            md: 40,
+          },
+        }}
+      />
+    ),
   },
   {
     image: Web,
     title: "Web Development",
     description: "Develop a modern planning",
-    icon: <WebIcon color="primary" sx={{ fontSize: 40 }} />,
+    icon: (
+      <WebIcon
+        color="primary"
+        sx={{
+          fontSize: {
+            xs: 24,
+            sm: 32,
+            md: 40,
+          },
+        }}
+      />
+    ),
   },
   {
     image: MobileImage,
     title: "Mobile App Development",
     description: "Develop a modern planning",
-    icon: <TabletMacIcon color="primary" sx={{ fontSize: 40 }} />,
+    icon: (
+      <TabletMacIcon
+        color="primary"
+        sx={{
+          fontSize: {
+            xs: 24,
+            sm: 32,
+            md: 40,
+          },
+        }}
+      />
+    ),
   },
   {
     image: EcSolution,
     title: "E-Commerce Solutions",
     description: "Develop a modern planning",
-    icon: <EmojiObjectsIcon color="primary" sx={{ fontSize: 40 }} />,
+    icon: (
+      <EmojiObjectsIcon
+        color="primary"
+        sx={{
+          fontSize: {
+            xs: 24,
+            sm: 32,
+            md: 40,
+          },
+        }}
+      />
+    ),
   },
   {
     image: Maintenacne,
     title: "Maintainance",
     description: "Develop a modern planning",
-    icon: <EngineeringIcon color="primary" sx={{ fontSize: 40 }} />,
+    icon: (
+      <EngineeringIcon
+        color="primary"
+        sx={{
+          fontSize: {
+            xs: 24,
+            sm: 32,
+            md: 40,
+          },
+        }}
+      />
+    ),
   },
 ];
 
@@ -106,6 +161,18 @@ const StyledSlider = styled(Slider)`
       }
     }
   }
+
+  @media (max-width: 900px) {
+    .slick-dots {
+      bottom: -1rem;
+
+      li {
+        button:before {
+          font-size: 12px;
+        }
+      }
+    }
+  }
 `;
 
 const Services = () => {
@@ -141,8 +208,12 @@ const Services = () => {
     <Box
       sx={{
         width: "100%",
-        height: "40%",
+        height: "35%",
         display: "block",
+
+        "@media (max-width: 900px)": {
+          height: "30%",
+        },
       }}
     >
       <StyledSlider {...settings}>
@@ -158,7 +229,12 @@ const Services = () => {
           >
             <CardActionArea sx={{ height: "100%" }}>
               <CardMedia
-                sx={{ objectFit: "contain" }}
+                sx={{
+                  objectFit: "contain",
+                  "@media (max-width: 900px)": {
+                    height: "35%",
+                  },
+                }}
                 component="img"
                 height="50%"
                 image={`${card.image}`}
@@ -169,13 +245,35 @@ const Services = () => {
                   flexDirection: "column",
                   justifyContent: "center",
                   alignItems: "center",
+                  "@media (max-width: 900px)": {
+                    textAlign: "center",
+                  },
                 }}
               >
-                <Typography gutterBottom variant="h3" component="div">
+                <Typography
+                  gutterBottom
+                  variant="h3"
+                  component="div"
+                  sx={{
+                    fontSize: {
+                      xs: "24px",
+                      sm: "32px",
+                    },
+                  }}
+                >
                   {card.icon}
                   {card.title}
                 </Typography>
-                <Typography variant="body1" sx={{ color: "text.secondary" }}>
+                <Typography
+                  variant="body1"
+                  sx={{
+                    color: "text.secondary",
+                    fontSize: {
+                      xs: "14px",
+                      sm: "32px",
+                    },
+                  }}
+                >
                   {card.description}
                 </Typography>
               </CardContent>

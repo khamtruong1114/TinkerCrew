@@ -27,6 +27,7 @@ export default function AddressForm() {
 
         "@media (max-width: 600px)": {
           boxShadow: "none",
+          width: "80%",
         },
       }}
     >
@@ -59,7 +60,7 @@ export default function AddressForm() {
             size="small"
             sx={{
               height: "50%",
-              fontSize: { xs: "24px", md: "32px" },
+              fontSize: { xs: "16px", md: "32px" },
               marginTop: "1rem",
             }}
           />
@@ -69,7 +70,7 @@ export default function AddressForm() {
             htmlFor="last-name"
             required
             sx={{
-              fontSize: { xs: "24px", md: "32px" },
+              fontSize: { xs: "16px", md: "32px" },
             }}
           >
             Last name
@@ -84,7 +85,7 @@ export default function AddressForm() {
             size="small"
             sx={{
               height: "50%",
-              fontSize: { xs: "24px", md: "32px" },
+              fontSize: { xs: "16px", md: "32px" },
               marginTop: "1rem",
             }}
           />
@@ -94,7 +95,7 @@ export default function AddressForm() {
             htmlFor="description"
             required
             sx={{
-              fontSize: { xs: "24px", md: "32px" },
+              fontSize: { xs: "16px", md: "32px" },
             }}
           >
             Description
@@ -110,7 +111,7 @@ export default function AddressForm() {
             minRows={4} // tối thiểu 4 dòng
             maxRows={8} // tối đa 8 dòng (tuỳ chọn)
             sx={{
-              fontSize: "24px",
+              fontSize: { xs: "16px", md: "32px" },
               mt: 1,
             }}
           />
@@ -121,7 +122,7 @@ export default function AddressForm() {
             variant="contained"
             sx={{
               height: "50%",
-              fontSize: "24px",
+              fontSize: { xs: "16px", md: "32px" },
               marginTop: "1rem",
             }}
           >

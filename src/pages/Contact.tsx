@@ -19,7 +19,9 @@ const TextBox = styled(Box)`
   padding-top: 4rem;
 
   @media (max-width: 600px) {
-    padding-top: 6rem;
+    padding-top: 6.5rem;
+    align-items: left;
+    width: 100%;
   }
 `;
 

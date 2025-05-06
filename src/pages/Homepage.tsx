@@ -8,6 +8,8 @@ const Wrapper = styled(Box)`
   flex-direction: column;
   width: 100vw;
   height: 100vh;
+
+ 
 `;
 
 export default function Homepage() {
