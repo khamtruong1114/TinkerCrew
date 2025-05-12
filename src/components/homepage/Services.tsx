@@ -183,7 +183,7 @@ const Services = () => {
     speed: 500,
     slidesToScroll: 1,
     arrows: false,
-    autoplay: false,
+    autoplay: true,
     autoplaySpeed: 5000,
     responsive: [
       {

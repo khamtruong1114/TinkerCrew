@@ -1,9 +1,8 @@
 import { Box, Button, ButtonGroup, Typography } from "@mui/material";
 import styled from "styled-components";
-import HeroSectionImage1 from "../../assets/HeroSectionImage1.png";
 import HeroSectionImage2 from "../../assets/HeroSectionImage2.png";
 import HeroSectionImage3 from "../../assets/HeroSectionImage3.png";
-
+import Portfolio from "./Portfolio";
 const HeroSectionWrapper = styled(Box)`
   display: flex;
   height: 60%;
@@ -45,21 +44,6 @@ const TextBox = styled(Box)`
   @media (max-width: 900px) {
     width: 100%;
     text-align: center;
-  }
-`;
-
-const Image = styled(Box)`
-  width: 50%;
-  height: 60%;
-  margin-top: 220px;
-  border-radius: 30px;
-  background-image: url(${HeroSectionImage1});
-  background-position: center;
-  box-shadow: 0px 0px 30px 5px rgba(255, 255, 255, 0.5);
-  color: white;
-
-  @media (max-width: 900px) {
-    margin-top: 0;
   }
 `;
 
@@ -141,6 +125,7 @@ export default function HeroSection() {
           </Button>
         </ButtonGroup>
       </TextContainer>
+
       {/* Portfolio*/}
       <TextContainer
         $image={`${HeroSectionImage3}`}
@@ -153,7 +138,7 @@ export default function HeroSection() {
           },
         }}
       >
-        <Image>PORTFOLIO HERE</Image>
+        <Portfolio />
       </TextContainer>
     </HeroSectionWrapper>
   );
